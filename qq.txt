@@ -1,0 +1,10 @@
+SELECT  fiche_personne.prenom , UPPER(fiche_personne.nom) as 'NOM', abonnement.prix  from fiche_personne INNER JOIN membre ON fiche_personne.id_perso = membre.id_membre INNER JOIN abonnement ON membre.id_abo = abonnement.id_abo WHERE prix > 42 ORDER BY nom, prenom;
+
+SELECT nom, prenom from fiche_personne WHERE INSTR(nom, '-') > 0 OR INSTR(prenom, '-') > 0 ORDER BY nom, prenom;
+
+
+SELECT ceil(AVG(nbr_siege)) as "moyenne" from salle;
+
+SELECT etage_salle as "etage", SUM(nbr_siege) as 'sieges' from salle  GROUP by etage_salle ORDER by nbr_siege;
+
+SELECT REVERSE(SUBSTRING(telephone, 2)) as "enohpelet" from distrib where LEFT(telephone ,2) = 05;
