@@ -1,0 +1,12 @@
+INSERT into ft_table(login, date_de_creation, groupe) select nom, date_naissance, "other"  from fiche_personne where CHAR_LENGTH(nom) < 9 AND INSTR(nom, 'a') > 0 ORDER BY nom limit 10;
+
+UPDATE ft_table SET date_de_creation = ADDDATE(date_de_creation, INTERVAL 20 YEAR) WHERE id > 5;
+
+DELETE FROM ft_table where id > 0 LIMIT 5;
+
+Select titre, resum, id_film from film where INSTR(resum, 'vincent') > 0 ORDER BY id_film;
+
+
+select titre, resum, duree_min from film where INSTR(resum, '42') > 0 OR INSTR(titre, '42') > 0 ORDER BY duree_min;
+
+SELECT nom, prenom, LEFT(date_naissance , 10) AS 'date de naissance' FROM fiche_personne where LEFT(date_naissance, 4) = 1989 ORDER BY nom;
